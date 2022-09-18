@@ -10,12 +10,16 @@ namespace DogPissNCo.webapi.Application.Services
             _dogeRepository = dogRepository;
         }
 
-        public void PissDogs()
+        public int PissDogs()
         {
+            int dogsPissed = 0;
             var dog = _dogeRepository.GetDog();
             if (dog.AmountOfPeeMl > 0){
                 dog.AmountOfPeeMl = 0;
+                dogsPissed++;
             }
+
+            return dogsPissed;
         }
     }
 }
