@@ -21,12 +21,12 @@ jobs:
       uses: gittools/actions/gitversion/setup@v0
       with:
         versionSpec: '5.5.0'
-    - name: Determine Version
-      uses: gittools/actions/gitversion/execute@v0
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 8.0.x
+    - name: Determine Version
+      uses: gittools/actions/gitversion/execute@v0
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
